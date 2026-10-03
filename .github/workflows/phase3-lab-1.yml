@@ -11,8 +11,9 @@ jobs:
     if: always()
     steps:
       - run: |
-          echo "Branch  : ${{github.ref}}"
-          echo "Actor   : ${{github.actor}}"
+          echo "Branch/Ref   : ${{github.ref}}"
+          echo "Commit SHA   : ${{github.sha}}"
+          echo "Actor        : ${{github.actor}}"
           
   deployment:
     needs: test

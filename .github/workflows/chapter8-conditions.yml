@@ -3,7 +3,6 @@ name: branch-aware ci/cd workflow
 on:
     push:
         branches: ['main', 'develop']
-
 jobs:
     test:
         runs-on: ubuntu-slim

@@ -1,0 +1,21 @@
+name: phase4-lab-1
+
+run-name: oidc & permission 
+
+
+on:
+  push:
+    branches: ['main']
+    
+permissions:
+  contents: read
+
+  
+jobs:
+  build:
+    runs-on: ubuntu-slim
+    steps:
+      - name: chekingout the code 
+        uses: actions/checkout@v4
+
+    

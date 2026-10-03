@@ -1,0 +1,24 @@
+name: phase2-lab-3
+
+on:
+  push:
+    branches: main
+jobs:
+  lint:
+    runs-on: ubuntu-slim
+    steps:
+      - run: echo "lining..."
+  test:
+    runs-on: ubuntu-slim
+    steps:
+      - run: echo "testing..."
+  security:
+    runs-on: ubuntu-slim
+    steps:
+      - run: echo "security..."
+
+  build:
+    needs: [lint,test,security]
+    runs-on: ubuntu-slim
+    steps:
+      - run: echo "building..."

@@ -12,10 +12,11 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-slim
+    steps:
+      - run: echo "build job"
     
- 
-  
   deploy-staging:
+    needs: build
     environment: staging
     runs-on: ubuntu-slim
     steps:
@@ -24,7 +25,7 @@ jobs:
           echo "STAGING_SECRET = ${{vars.STAGING_SECRET}}"
   
   deploy-production:
-    
+    needs: deploy-staging
     environment: production
     runs-on: ubuntu-slim
     steps:

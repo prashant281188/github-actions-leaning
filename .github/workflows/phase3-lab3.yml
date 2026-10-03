@@ -3,7 +3,7 @@ run-name: variables and secrets example
 
 on:
   push:
-    branches: ['main']
+    branches: []
   
 env:
   APP_NAME: variable-demo

@@ -2,8 +2,7 @@ name: Variables and Secrets
 run-name: variables and secrets example
 
 on:
-  push:
-    branches: []
+  workflow_run: 
   
 env:
   APP_NAME: variable-demo

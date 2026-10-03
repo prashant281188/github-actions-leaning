@@ -18,7 +18,7 @@ jobs:
   deployment:
     needs: test
     runs-on: ubuntu-slim
-    if: success() && github.ref == 'refs/heads/main'
+    if: success() && github.ref == 'refs/heads/production'
     steps:
       - name: run
         run: echo "deployment running"

@@ -22,7 +22,7 @@ jobs:
 
     deploy:
         needs: test
-        if: success() && github.ref == 'refs/head/main'
+        if: success() && github.ref == 'refs/heads/main'
         runs-on: ubuntu-slim
         steps:
             - run: |

@@ -24,7 +24,7 @@ jobs:
     steps:
       - run: |
           echo "STAGING_VAR = ${{vars.STAGING_VAR}}"
-          echo "STAGING_SECRET = ${{vars.STAGING_SECRET}}"
+          echo "STAGING_SECRET = ${{secrets.STAGING_SECRET}}"
   
   deploy-production:
     needs: deploy-staging
@@ -33,4 +33,4 @@ jobs:
     steps:
       - run: |
           echo "PRODUCTION_VAR = ${{vars.PRODUCTION_VAR}}"
-          echo "PRODUCTION_SECRET = ${{vars.PRODUCTION_SECRET}}"
+          echo "PRODUCTION_SECRET = ${{secrets.PRODUCTION_SECRET}}"

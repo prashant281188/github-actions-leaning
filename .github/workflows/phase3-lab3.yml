@@ -1,0 +1,17 @@
+name: Variables and Secrets
+run-name: variables and secrets example
+
+on:
+  workflow_run:
+env:
+  APP_NAME: variable-demo
+jobs:
+  var-demo:
+    runs-on: ubuntu-slim
+
+    steps:
+      - run: |
+          echo "APP_NAME       = ${{env.APP_NAME}}"
+          echo "DEPLOY_REGION  = ${{vars.DEPLOY_REGION}}"
+          echo "DEMO_TOKEN    = ${{secrets.DEMO_TOKEN}}"
+    

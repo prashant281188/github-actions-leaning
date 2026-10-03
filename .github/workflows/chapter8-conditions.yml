@@ -1,0 +1,30 @@
+name: branch-aware ci/cd workflow
+
+on:
+    push:
+        branches: [main]
+
+jobs:
+    test:
+        runs-on: ubuntu-slim
+        steps:
+            - run: echo "Running tests"
+
+    diagnostics:
+        needs: test
+        if: always()
+        runs-on: ubuntu-slim
+        steps:
+            - run: |
+                echo "${{github.ref}}"
+                echo "${{github.sha}}"
+                echo "${{github.actor}}""
+
+    deploy:
+        needs: test
+        if: success() && github.ref == 'refs/head/main'
+        runs-on: ubuntu-slim
+        steps:
+            - run: |
+                echo "deploying..."
+                echo "${{github.sha}}"

@@ -1,8 +1,7 @@
 name: phase3-lab-1
 run-name: phase 3 lab 1
 on:
-  push:
-    branches: ['main', 'feature']
+  workflow_run: 
 
 jobs:
 

@@ -1,0 +1,33 @@
+name: multi environment
+
+run-name: multi environment demo
+
+
+on:
+  push:
+    branches: ['main']
+permissions:
+  checks: write
+  pull-requests: read
+jobs:
+  build:
+    runs-on: ubuntu-slim
+    
+ 
+  
+  deploy-staging:
+    environment: staging
+    runs-on: ubuntu-slim
+    steps:
+      - run: |
+          echo "STAGING_VAR = ${{vars.STAGING_VAR}}"
+          echo "STAGING_SECRET = ${{vars.STAGING_SECRET}}"
+  
+  deploy-production:
+    
+    environment: production
+    runs-on: ubuntu-slim
+    steps:
+      - run: |
+          echo "PRODUCTION_VAR = ${{vars.PRODUCTION_VAR}}"
+          echo "PRODUCTION_SECRET = ${{vars.PRODUCTION_SECRET}}"

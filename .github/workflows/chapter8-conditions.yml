@@ -2,7 +2,7 @@ name: branch-aware ci/cd workflow
 
 on:
     push:
-        branches: ['main', 'testing branch']
+        branches: ['main', 'develop']
 
 jobs:
     test:

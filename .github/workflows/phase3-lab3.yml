@@ -3,6 +3,7 @@ run-name: variables and secrets example
 
 on:
   workflow_run:
+    branches: ['main']
   
 env:
   APP_NAME: variable-demo

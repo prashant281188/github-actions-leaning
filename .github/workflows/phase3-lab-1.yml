@@ -1,9 +1,9 @@
 name: phase3-lab-1
-run-name: feature branch running
+run-name: feature branch running 
 
 on:
   push:
-    branches: ['main']
+    branches: ['main', 'feature']
 
 jobs:
 

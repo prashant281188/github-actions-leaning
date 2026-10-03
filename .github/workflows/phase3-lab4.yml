@@ -1,6 +1,6 @@
-name: multi environment
+name: multi environment with permission
 
-run-name: multi environment demo
+run-name: multi environment demo with permission
 
 
 on:

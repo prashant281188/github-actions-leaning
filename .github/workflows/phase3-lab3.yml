@@ -3,10 +3,12 @@ run-name: variables and secrets example
 
 on:
   workflow_run:
+  
 env:
   APP_NAME: variable-demo
 jobs:
   var-demo:
+    environment: testing
     runs-on: ubuntu-slim
 
     steps:

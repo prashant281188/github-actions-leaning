@@ -4,8 +4,8 @@ run-name: multi environment demo with permission
 
 
 on:
-  push:
-    branches: ['main']
+  workflow_run: 
+    
 permissions:
   checks: write
   pull-requests: read

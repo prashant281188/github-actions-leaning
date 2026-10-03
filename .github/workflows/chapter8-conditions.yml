@@ -1,14 +1,12 @@
 name: branch-aware ci/cd workflow
-
 on:
     push:
         branches: ['main', 'develop']
-
 jobs:
     test:
         runs-on: ubuntu-slim
         steps:
-            - run: echo "Running tests"
+            - run: exit 1
 
     diagnostics:
         needs: test

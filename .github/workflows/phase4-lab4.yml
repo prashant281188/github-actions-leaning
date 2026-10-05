@@ -16,12 +16,12 @@ jobs:
     runs-on: ubuntu-slim
     steps:
       - name: configure
-        uses: aws-actions/configure-aws-credentials@v4
+        uses: aws-actions/configure-aws-credentials@v3
         with:
           role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
           aws-region: ap-south-1
           audience: sts.amazonaws.com
       - name: verify aws idendity
         run: |
-         aws s3 ls
+         aws sts get-caller-identity
     

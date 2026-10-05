@@ -15,13 +15,14 @@ jobs:
     environment: testing
     runs-on: ubuntu-slim
     steps:
-      - name: Configure AWS Credentials
-        uses: aws-actions/configure-aws-credentials@v4
-        with:
-          role-to-assume: arn:aws:iam::${{secrets.AWS_USER}}:role/github-action-oidc 
-          aws-region: us-east-1
-          audience: sts.amazonaws.com
-      - name: verify aws idendity
-        run: |
+    - name: Configure AWS Credentials for China region audience
+      uses: aws-actions/configure-aws-credentials@v6.3.0
+      with:
+        audience: sts.amazonaws.com
+        role-to-assume: arn:aws:iam::${{secrets.AWS_USER}}:role/github-action-oidc 
+        aws-region: us-east-1
+       
+    - name: verify aws idendity
+      run: |
          aws sts get-caller-identity
     

@@ -1,0 +1,27 @@
+name: aws oidc connect
+run-name: aws oidc connection expample
+
+
+on:
+  push:
+    branches: ['main']
+
+permissions: 
+  id-token: write
+  contents: read
+
+jobs:
+  connect:
+    environment: testing
+    runs-on: ubuntu-slim
+    steps:
+      - name: configure
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
+          aws-region: ap-south-1
+          audience: sts.amazonaws.com
+      - name: verify aws idendity
+        run: |
+         aws s3 ls
+    

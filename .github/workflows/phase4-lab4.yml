@@ -15,8 +15,8 @@ jobs:
     environment: testing
     runs-on: ubuntu-slim
     steps:
-      - name: configure
-        uses: aws-actions/configure-aws-credentials@v3
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v4
         with:
           role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
           aws-region: us-east-1

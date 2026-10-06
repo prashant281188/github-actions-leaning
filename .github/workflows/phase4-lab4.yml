@@ -5,6 +5,7 @@ run-name: aws oidc connection expample
 on:
   push:
     branches: ['main']
+  workflow_call: 
 
 permissions: 
   id-token: write
